@@ -1,0 +1,350 @@
+/* ============================================================
+   FORMS.CSS - QUẢN LÝ GIAO DIỆN BIỂU MẪU & THANH TOÁN
+   ============================================================ */
+
+/* 1. TIÊU ĐỀ & ĐIỀU HƯỚNG TRONG FORM */
+.form-header-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.btn-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+    color: #475569;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 8px 16px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background: #fff;
+    transition: all 0.2s ease;
+}
+
+.btn-back:hover {
+    background: #f8fafc;
+    color: #0f172a;
+    border-color: #94a3b8;
+}
+
+/* 2. BỐ CỤC FORM (GRID SYSTEM) */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+.form-row, .form-row-lg {
+    display: grid;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+}
+
+/* 3. NHÃN (LABELS) & CHÚ THÍCH */
+.form-label, .form-group label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #0f172a;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.form-group label.required::after, .req {
+    content: " *";
+    color: var(--danger);
+    font-weight: bold;
+}
+
+.form-group small {
+    margin-top: 6px;
+    font-size: 13px;
+    color: #475569;
+}
+
+/* 4. CÁC THÀNH PHẦN NHẬP LIỆU (INPUTS, SELECTS) */
+.input, .form-group input, .form-group select {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #334155;
+    background: #fff;
+    outline: none;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+}
+
+.input:focus, .form-group input:focus, .form-group select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.input:read-only, input[readonly] {
+    background-color: #f1f5f9;
+    color: #64748b;
+    cursor: not-allowed;
+    border-color: #e2e8f0;
+}
+
+/* 5. NÚT BẤM TRONG FORM */
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 24px;
+    flex-wrap: wrap;
+}
+
+.actions-center {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn-submit-large {
+    width: 100%;
+    font-size: 16px;
+    padding: 12px;
+    background: #0d6efd;
+    color: #fff;
+    border: 1px solid #0d6efd;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.btn-submit-large:hover {
+    background: #0b5ed7;
+    box-shadow: 0 4px 12px rgba(13, 110, 253, 0.2);
+}
+
+/* 6. QUẢN LÝ HỢP ĐỒNG (CONTRACT SPECIFIC) */
+.contract-card {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.section-title {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.section-title.highlight {
+    color: #8b5cf6;
+    margin-bottom: 5px;
+}
+
+.form-divider {
+    border-top: 1px dashed #cbd5e1;
+    margin-top: 25px;
+    padding-top: 20px;
+}
+
+/* 7. THANH TOÁN CHO ADMIN (PAY INVOICE) */
+.payment-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.method-option {
+    display: flex;
+    align-items: center;
+    padding: 14px 18px;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    cursor: pointer;
+    background: #fff;
+    transition: all 0.2s ease;
+}
+
+.method-option:hover {
+    border-color: var(--success);
+    background-color: #f8fafc;
+}
+
+.method-option input[type="radio"] {
+    width: 18px;
+    height: 18px;
+    margin-right: 12px;
+}
+
+.qr-box {
+    display: none;
+    text-align: center;
+    margin-top: 10px;
+    padding: 20px;
+    border: 2px dashed #cbd5e1;
+    border-radius: 12px;
+    background: #f1f5f9;
+}
+
+#methodTransfer:checked ~ .qr-box {
+    display: block;
+}
+
+.qr-img {
+    width: 220px;
+    height: 220px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    background: white;
+    padding: 10px;
+}
+
+/* 8. THANH TOÁN CHO SINH VIÊN (STUDENT QR - NO JS) */
+.payment-wrapper {
+    text-align: center;
+    margin-top: 25px;
+}
+
+details.payment-details {
+    display: inline-block;
+    width: 100%;
+}
+
+details.payment-details summary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--success);
+    color: white;
+    padding: 12px 28px;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 12px;
+    cursor: pointer;
+    list-style: none;
+    transition: all 0.2s ease;
+}
+
+details.payment-details summary::-webkit-details-marker {
+    display: none;
+}
+
+details.payment-details summary:hover {
+    background-color: #059669;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(16, 185, 129, 0.2);
+}
+
+details.payment-details[open] summary {
+    background-color: #64748b;
+    margin-bottom: 20px;
+}
+
+.payment-instruction-card {
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 16px;
+    border: 2px dashed var(--primary);
+    text-align: center;
+    animation: slideDown 0.3s ease-out;
+}
+
+.qr-code-img {
+    width: 240px;
+    height: 240px;
+    border-radius: 12px;
+    border: 1px solid #cbd5e1;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    background: white;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.payment-info-box {
+    font-size: 15px;
+    line-height: 1.8;
+    display: inline-block;
+    text-align: left;
+    background: #f8fafc;
+    padding: 20px 30px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+}
+
+/* 9. HIỆU ỨNG (ANIMATIONS) */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.filter-form {
+    display: flex;
+    gap: 20px;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+    padding: 20px;
+}
+.filter-item {
+    flex: 1;
+    min-width: 150px;
+}
+.filter-label {
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 8px;
+    display: block;
+}
+.filter-actions {
+    display: flex;
+    gap: 10px;
+}
+.btn-filter-submit {
+    background: #10b981;
+    height: 42px;
+    padding: 0 24px;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.btn-filter-submit:hover {
+    background: #059669;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+}
+.btn-filter-reset {
+    height: 42px;
+    display: flex;
+    align-items: center;
+}
+.total-summary-card {
+    margin-bottom: 24px;
+    text-align: center;
+    padding: 20px;
+}
+.total-value-large {
+    font-size: 2rem;
+    margin-top: 8px;
+}

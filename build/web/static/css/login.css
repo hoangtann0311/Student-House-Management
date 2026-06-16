@@ -1,0 +1,332 @@
+* {
+    box-sizing: border-box;
+}
+:root{
+    --nav-bg: rgba(17, 31, 24, 0.78);
+    --nav-border: rgba(255,255,255,.10);
+
+    --card-bg: rgba(255,255,255,.25);
+    --card-border: rgba(255,255,255,.35);
+
+    --accent: rgba(214,176,108,0.95);
+    --accent-soft: rgba(214,176,108,.18);
+
+    --text-dark:#0f172a;
+}
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    background: url("../img/bg-room.jpg") center/cover no-repeat fixed;
+    min-height: 100vh;
+    color: white;
+}
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background: radial-gradient(
+        1200px 600px at 50% 20%,
+        rgba(0,0,0,.10),
+        rgba(0,0,0,.35)
+        );
+    pointer-events:none;
+}
+
+.login-wrapper {
+    width: 100%;
+    padding: 24px;
+    min-height: calc(100vh - 64px);
+    display: grid;
+    place-items: center;
+}
+
+.login-card{
+    width:420px;
+    max-width:100%;
+
+    background: var(--card-bg);
+    border:1px solid var(--card-border);
+
+    border-radius:18px;
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    box-shadow:0 20px 60px rgba(0,0,0,.35);
+    overflow:hidden;
+}
+
+.login-header{
+    padding:20px 22px;
+
+    background: rgba(17,31,24,0.70);
+    backdrop-filter: blur(10px);
+
+    border-bottom:1px solid rgba(255,255,255,.15);
+    color:white;
+}
+
+.login-header h1 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.login-header p {
+    margin: 6px 0 0;
+    font-size: 13px;
+    opacity: 0.9;
+}
+
+.login-body {
+    padding: 22px;
+}
+
+.field {
+    margin-bottom: 14px;
+}
+
+.label {
+    display: block;
+    font-size: 13px;
+    margin-bottom: 6px;
+    color: #334155;
+    font-weight: 600;
+}
+
+.input-wrap {
+    position: relative;
+}
+
+.input{
+    width:100%;
+    padding:12px;
+    border-radius:12px;
+
+    border:1px solid rgba(255,255,255,.45);
+    background: rgba(255,255,255,.85);
+
+    font-size:14px;
+    outline:none;
+}
+
+.input:focus{
+    border-color: var(--accent);
+    box-shadow:0 0 0 4px rgba(214,176,108,.25);
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 10px 0 16px;
+}
+
+.remember {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #334155;
+}
+
+.link{
+    font-size: 13px;
+    color: #1F2937;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+
+
+.link-a {
+    font-size: 13px;
+    color: #4f46e5;
+    text-decoration: none;
+}
+.link .link-a:hover {
+    text-decoration: underline;
+}
+
+.btn{
+    width:100%;
+    padding:12px 14px;
+
+    border-radius:12px;
+    border:none;
+
+    cursor:pointer;
+    font-weight:800;
+    font-size:14px;
+
+    color:#fff;
+
+    background: rgba(17,31,24,0.65);
+
+    transition: all .15s ease;
+}
+
+.btn:hover{
+    transform: translateY(-1px);
+    filter: brightness(1.05);
+}
+
+.error {
+    margin-bottom: 12px;
+    padding: 10px 12px;
+    border-radius: 12px;
+    background: #fee2e2;
+    border: 1px solid #fecaca;
+    color: #991b1b;
+    font-size: 13px;
+}
+
+.footer {
+    padding: 14px 22px 18px;
+    color: rgba(255,255,255,0.85);
+    font-size: 12px;
+    text-align: center;
+}
+
+.site-header{
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background: rgba(15, 23, 42, 0.78);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255,255,255,.10);
+}
+
+.site-header__inner{
+    width: min(1100px, 92vw);
+    margin: 0 auto;
+    padding: 12px 0;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap: 12px;
+}
+
+.site-brand{
+    text-decoration:none;
+    color:#fff;
+    display:grid;
+    gap:2px;
+}
+.site-brand__title{
+    font-weight: 900;
+    font-size: 16px;
+    line-height: 1.1;
+}
+.site-brand__sub{
+    font-size: 12px;
+    opacity: .85;
+}
+
+.site-actions{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.btn-nav{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding: 9px 12px;
+    border-radius: 12px;
+    text-decoration:none;
+    font-weight: 800;
+    font-size: 13px;
+    border: 1px solid rgba(255,255,255,.28);
+    color:#fff;
+    background: rgba(255,255,255,.10);
+}
+.btn-nav:hover{
+    filter: brightness(1.05);
+}
+
+/* Giao diện chuẩn theo ảnh thực tế - Chữ màu trắng */
+.login-card {
+    background: rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4) !important;
+    border-radius: 24px !important;
+    overflow: hidden;
+}
+
+/* Phần đầu màu xanh rêu đậm */
+.login-header {
+    background: #3d463d !important; 
+    padding: 25px !important;
+}
+
+.login-header h1 {
+    color: #ffffff !important;
+    font-size: 24px !important;
+    margin: 0 !important;
+    font-weight: 700 !important;
+}
+
+.login-header p {
+    color: rgba(255, 255, 255, 0.8) !important;
+    margin-top: 8px !important;
+}
+
+/* ĐÃ SỬA: Chữ Tài khoản / Mật khẩu thành màu trắng */
+.label {
+    color: #ffffff !important; 
+    font-weight: 600 !important;
+    margin-bottom: 8px !important;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3); /* Thêm bóng đổ nhẹ để dễ đọc */
+}
+
+/* Input màu xanh nhạt glass */
+.input {
+    background: #e8f0fe !important; 
+    border: none !important;
+    border-radius: 14px !important;
+    padding: 14px !important;
+    color: #1a1a1a !important;
+}
+
+/* Nút bấm xanh rêu đậm */
+.btn {
+    background: #3d463d !important; 
+    color: #ffffff !important;
+    border-radius: 14px !important;
+    padding: 14px !important;
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    width: 100% !important;
+    border: none !important;
+    margin-top: 15px !important;
+    cursor: pointer;
+}
+
+/* ĐÃ SỬA: Chữ Quên mật khẩu thành màu trắng */
+.link {
+    color: #ffffff !important;
+    font-weight: 500 !important;
+    text-decoration: none !important;
+    font-size: 13px !important;
+    opacity: 0.9;
+}
+
+.link:hover {
+    opacity: 1;
+    text-decoration: underline !important;
+}
+
+/* Thông báo lỗi */
+.error {
+    background: #fde2e2 !important;
+    border: 1px solid #f9cccc !important;
+    color: #b91c1c !important;
+    border-radius: 12px !important;
+    padding: 12px !important;
+    margin-bottom: 15px !important;
+}

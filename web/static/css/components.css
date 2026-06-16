@@ -1,0 +1,359 @@
+/* ========== TIÊU ĐỀ TRANG & TÌM KIẾM ========== */
+.page-top, .room-header, .table-header-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.page-title {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 900;
+    color: #1e293b;
+}
+.actions, .room-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.room-search {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+/* ========== NÚT BẤM (BUTTONS) ========== */
+.btn, .btn-main, .btn-secondary, .btn-danger, .btn-action, .btn-table, .page-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+    outline: none;
+}
+.btn-main {
+    background: #1b66d1;
+    color: white;
+}
+.btn-main:hover {
+    background: #1557b0;
+}
+.btn-secondary {
+    background: #f1f5f9;
+    color: #334155;
+    border-color: #cbd5e1;
+}
+.btn-secondary:hover {
+    background: #e2e8f0;
+}
+.btn-danger {
+    background: #ef4444;
+    color: white;
+}
+.btn-danger:hover {
+    background: #dc2626;
+}
+.btn-action {
+    background: #3b82f6;
+    color: white;
+    padding: 6px 12px;
+    font-size: 12px;
+}
+.btn-table {
+    background: #e2e8f0;
+    color: #333;
+    padding: 6px 12px;
+    font-size: 12px;
+}
+
+/* Nút dạng bo tròn tròn (trong Form) */
+.btn-rounded {
+    border-radius: 999px;
+    padding: 10px 24px;
+}
+.btn-save {
+    background: #0d6efd;
+    color: #fff;
+}
+.btn-cancel {
+    background: #fff;
+    color: #475569;
+    border-color: #cbd5e1;
+}
+.btn-wide {
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+/* ========== BADGE (NHÃN TRẠNG THÁI) ========== */
+.badge, .status {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+    line-height: 1;
+    border: 1px solid transparent;
+}
+.badge-success, .available, .badge-paid {
+    background: #dcfce7;
+    color: #166534;
+    border-color: #bbf7d0;
+}
+.badge-danger, .badge-unpaid {
+    background: #fee2e2;
+    color: #dc2626;
+    border-color: #fecaca;
+}
+.badge-warning, .occupied {
+    background: #fef3c7;
+    color: #92400e;
+    border-color: #fde68a;
+}
+.badge-info {
+    background: #e0f2fe;
+    color: #0369a1;
+    border-color: #bae6fd;
+}
+.maintenance {
+    background: #e0e7ff;
+    color: #3730a3;
+    border-color: #c7d2fe;
+}
+.badge-method.cash {
+    background: #f0fdf4;
+    color: #166534;
+}
+.badge-method.transfer {
+    background: #eff6ff;
+    color: #1e40af;
+}
+
+/* ========== BẢNG (TABLE) ========== */
+.table-wrap {
+    overflow-x: auto;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    background: #fff;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 12px 14px;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+    vertical-align: middle;
+    font-size: 14px;
+}
+th {
+    background: #f8fafc;
+    font-weight: bold;
+    color: #1e293b;
+}
+tr:last-child td {
+    border-bottom: none;
+}
+tr:hover {
+    background-color: #f8fafc;
+}
+.table-center th, .table-center td {
+    text-align: center;
+}
+
+/* ========== PHÂN TRANG (PAGINATION) ========== */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 24px;
+    padding-bottom: 12px;
+}
+.page-btn {
+    min-width: 38px;
+    height: 38px;
+    padding: 0 12px;
+    border-radius: 10px;
+    font-weight: 700;
+    color: #0f172a;
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(15, 23, 42, 0.15);
+}
+.page-btn:hover {
+    background: #ffffff;
+    border-color: rgba(214, 176, 108, 0.8);
+    box-shadow: 0 4px 12px rgba(214, 176, 108, 0.2);
+    transform: translateY(-2px);
+}
+.page-btn.active {
+    background: #0f172a;
+    color: #ffffff;
+    border-color: #0f172a;
+    pointer-events: none;
+}
+.page-btn.nav-btn {
+    font-weight: 600;
+    padding: 0 16px;
+    background: rgba(255, 255, 255, 0.95);
+}
+
+/* ========== BỘ LỌC (FILTER) ========== */
+.filter-section {
+    background: var(--accent-soft);
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    display: flex;
+    gap: 15px;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    border: 1px solid var(--nav-border);
+}
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.filter-group label {
+    font-size: 13px;
+    font-weight: bold;
+    color: #1e293b;
+}
+.filter-group select, .filter-group input {
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid var(--card-border);
+    background: #fff;
+    min-width: 100px;
+    outline: none;
+}
+
+/* ========== ALERT BOX ========== */
+.alert-box, .success-alert, .error-text, .success-text {
+    padding: 16px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.alert-info {
+    background: #e0f2fe;
+    color: #0369a1;
+    border: 1px solid #bae6fd;
+}
+.alert-danger, .error-text {
+    background: #fee2e2;
+    color: #b91c1c;
+    border: 1px solid #fecaca;
+}
+.success-alert, .success-text {
+    background: #dcfce7;
+    color: #166534;
+    border: 1px solid #bbf7d0;
+}
+/* ========== THẺ THÔNG TIN PHỤ (ROOM INFO) ========== */
+.card.info-card {
+    box-shadow: none;
+    background: rgba(255, 255, 255, 0.65); /* Nền kính mờ sáng hơn 1 chút */
+    margin-top: 0;
+    border: 2px solid #bae6fd; /* Viền màu xanh nước biển nhạt */
+    border-radius: 16px;
+    transition: all 0.3s ease;
+}
+.card.info-card:hover {
+    border-color: #7dd3fc; /* Đậm hơn một chút khi di chuột vào */
+    background: rgba(255, 255, 255, 0.85);
+}
+/* ========== BỘ LỌC NỀN KÍNH MỜ ĐẬM (Dùng cho Invoice & Payment) ========== */
+.filter-card-glass {
+    background: rgba(255, 255, 255, 0.7) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    display: flex;
+    gap: 20px;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.5) !important;
+    margin-top: 0 !important;
+}
+
+.filter-label-bold {
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.input-glass {
+    background: rgba(255, 255, 255, 0.8) !important;
+}
+
+.btn-filter-search {
+    height: 42px;
+    padding: 0 25px;
+}
+
+.btn-filter-all {
+    height: 42px;
+    display: flex;
+    align-items: center;
+}
+
+/* ========== BỔ SUNG CHO TRANG METER READING ========== */
+/* Ô nhập chỉ số tháng/năm */
+.input-date-small {
+    width: 80px;
+    background: rgba(255, 255, 255, 0.8) !important;
+}
+
+.input-date-medium {
+    width: 100px;
+    background: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* Chú thích bên cạnh ô nhập ngày */
+.filter-note {
+    margin-left: 15px;
+    font-size: 13px;
+}
+
+/* Căn chỉnh nút bấm lưu ở cuối form */
+.actions-right {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+/* Kiểu cho ô nhập chỉ số trong bảng */
+.input-table-cell {
+    width: 100px;
+    text-align: center;
+}
+
+/* Đồng bộ nền glass cho form lọc */
+.filter-card-glass {
+    background: rgba(255, 255, 255, 0.7) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.5) !important;
+    margin-bottom: 25px;
+}
